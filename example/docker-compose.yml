@@ -1,0 +1,10 @@
+version: "3.6"
+services:
+  print:
+    image: subfuzion/netcat
+    command: ["-q", "0", "-l", "-k", "8080"]
+  on-demand-tunnel:
+    build: ..
+    command: ["*.local-redirect", "print:8080"]
+    env_file:
+      - .env

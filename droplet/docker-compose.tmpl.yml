@@ -1,0 +1,33 @@
+version: "3.6"
+services:
+  caddy:
+    image: caddy:2.2.0
+    depends_on:
+    - "local-redirect"
+    restart: always
+    ports:
+    - "80:80"
+    - "443:443"
+    volumes:
+    - ./Caddyfile:/etc/caddy/Caddyfile
+    - ./certs:/etc/caddy/certs
+    - caddy_home:/root/.caddy
+
+  self-destruct:
+    build: down
+    environment:
+      TF_VAR_digitalocean_api_token: "${digitalocean_api_token}"
+      TF_VAR_domain_record: "${domain_record}"
+
+  local-redirect:
+    image: linuxserver/openssh-server
+    ports:
+      - "2222:2222"
+    environment:
+      PUBLIC_KEY_FILE: /keys/authorized_keys
+      USER_NAME: bridge
+      DOCKER_MODS: linuxserver/mods:openssh-server-ssh-tunnel
+    volumes:
+      - ./authorized_keys:/keys/authorized_keys
+volumes:
+  caddy_home:

@@ -1,0 +1,7 @@
+https://${domain_record}.${domain} {
+    reverse_proxy local-redirect:8080
+
+    tls /etc/caddy/certs/certificate.pem /etc/caddy/certs/private_key.pem {
+        ca_root /etc/caddy/certs/issuer.pem
+    }
+}
