@@ -19,7 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d748a3d5-ab26-4b2d-a384-125224b019b8" name="Default Changelist" comment="" />
+    <list default="true" id="d748a3d5-ab26-4b2d-a384-125224b019b8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/droplet/down/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/droplet/down/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/droplet/down/script.py" beforeDir="false" afterPath="$PROJECT_DIR$/droplet/down/script.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/main.tf" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,7 +71,7 @@
       <workItem from="1602437062365" duration="2135000" />
       <workItem from="1602507687560" duration="8592000" />
       <workItem from="1602536720176" duration="4714000" />
-      <workItem from="1602694418309" duration="7058000" />
+      <workItem from="1602694418309" duration="9699000" />
     </task>
     <servers />
   </component>

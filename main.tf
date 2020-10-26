@@ -74,6 +74,12 @@ data "archive_file" "up_content" {
   output_path = ".up.zip"
 }
 
+data "archive_file" "droplet_content" {
+  type        = "zip"
+  source_dir  = "droplet"
+  output_path = ".droplet.zip"
+}
+
 output "bridge_ip" {
   value = digitalocean_droplet.jump.ipv4_address
 }
@@ -116,7 +122,8 @@ resource "acme_certificate" "certificate" {
 resource "null_resource" "jump_node" {
 
   triggers = {
-    src_hash = data.archive_file.up_content.output_sha
+    up_content_hash = data.archive_file.up_content.output_sha
+    droplet_content_hash = data.archive_file.droplet_content.output_sha
     main_tf_hash = data.local_file.maintf.content
   }
 
